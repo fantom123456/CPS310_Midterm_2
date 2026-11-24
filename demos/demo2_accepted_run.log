@@ -1,0 +1,26 @@
+=== STAGE 1: Baseline State & Ontology Grounding ===
+Loaded canonical OWL 2 DL ontology: ontology/zombie_sim_base.owl
+Active Invariants: Zombie hasAttackRange <= 2.0 | Agent hasSpeed in (0.0, 6.0] | No Disk I/O in Agent logic
+
+=== ATTEMPT 1: Stage 2 (AI Proposal Generation) ===
+Proposed Class: AcidSpitterZombie | Properties: {"hasSpeed": 3.2, "hasAttackRange": 18.0, "hasHealth": 90.0}
+[REJECTED] Stage 3 (HermiT Reasoner) -> OwlReadyInconsistentOntologyError: Proposal violates OWL axioms ()
+Saved inconsistent OWL state snapshot to: ontology/zombie_sim_inferred_demo1_rejected.owl
+=== Stage 5: Feeding Violation Trace into Prompt C for Automated Repair ===
+
+=== ATTEMPT 2: Stage 2 (AI Proposal Generation) ===
+Proposed Class: StalkerZombie | Properties: {"hasSpeed": 4.1, "hasAttackRange": 1.8, "hasHealth": 110.0}
+[ACCEPTED] All Gatekeepers Passed -> PASS: HermiT consistency verified and AST decoupling enforced.
+Saved verified OWL 2 DL ontology snapshot to: ontology/zombie_sim_verified_demo2_accepted.owl
+
+=== STAGE 6: Headless Simulation Execution & Telemetry Logging ===
+Simulation Telemetry Output: {
+  "timestamp_utc": "2026-11-24T17:27:19.566412+00:00",
+  "ticks": 150,
+  "initial_humans": 400,
+  "surviving_humans": 242,
+  "survival_rate_pct": 60.5,
+  "final_zombies": 258,
+  "total_infections": 158,
+  "runtime_ms": 93.36
+}
